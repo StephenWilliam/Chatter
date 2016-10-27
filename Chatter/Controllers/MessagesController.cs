@@ -52,7 +52,7 @@ namespace Chatter.Controllers
         {
             if (ModelState.IsValid)
             {
-                //message.User = ;
+                message.User = CurrentUser;
                 message.TimeStamp = DateTime.Now;
                 db.Messages.Add(message);
                 db.SaveChanges();
