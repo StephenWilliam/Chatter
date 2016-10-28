@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Chatter.Models.Message>
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<Chatter.Models.Message>
 
 @{
     ViewBag.Title = "Index";
@@ -9,6 +10,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@*  Get currentUser and Display ChatName *@
+User.Identity.GetUserName()
+@Html.ActionLink("Hello " + User.Identity.GetUserName() + " !", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+
 <table class="table">
     <tr>
         <th>
@@ -23,7 +29,11 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
+@*only display lines for currentUser *@
+    //while (item.User.ChatName == User.Identity.GetUserName())
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
@@ -35,11 +45,12 @@
             @Html.DisplayFor(modelItem => item.User.ChatName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MessageID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MessageID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
         </td>
     </tr>
+    }
 }
 
 </table>

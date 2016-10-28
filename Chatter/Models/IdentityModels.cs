@@ -19,8 +19,8 @@ namespace Chatter.Models
         }
         public string ChatName { get; set; }
         //public string Id { get; set; }
-        public ICollection<ApplicationUser> Followers { get; set; }
-        public ICollection<ApplicationUser> Following { get; set; }
+        //public ICollection<ApplicationUser> Followers { get; set; }
+        //public ICollection<ApplicationUser> Following { get; set; }
 
     }
 
@@ -39,20 +39,20 @@ namespace Chatter.Models
 
         public System.Data.Entity.DbSet<Chatter.Models.Message> Messages { get; set; }
 
-        public class MyEntities : DbContext
-        {
-            public DbSet<ApplicationUser> Users { get; set; }
+        //public class MyEntities : DbContext
+        //{
+        //    public DbSet<ApplicationUser> Users { get; set; }
 
-            protected override void OnModelCreating(DbModelBuilder modelBuilder)
-            {
-                modelBuilder.Entity<ApplicationUser>()
-                    .HasMany(x => x.Followers).WithMany(x => x.Following)
-                    .Map(x => x.ToTable("Followers")
-                        .MapLeftKey("UserId")
-                        .MapRightKey("FollowerId"));
-            }
-        }
+        //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //    {
+        //        modelBuilder.Entity<ApplicationUser>()
+        //            .HasMany(x => x.Followers).WithMany(x => x.Following)
+        //            .Map(x => x.ToTable("Followers")
+        //                .MapLeftKey("UserId")
+        //                .MapRightKey("FollowerId"));
+        //    }
+        //}
 
-        public System.Data.Entity.DbSet<Chatter.Models.ApplicationUser> ApplicationUsers { get; set; }
+        ////public System.Data.Entity.DbSet<Chatter.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

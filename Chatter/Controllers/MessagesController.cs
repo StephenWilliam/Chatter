@@ -96,6 +96,7 @@ namespace Chatter.Controllers
         {
             if (ModelState.IsValid)
             {
+                //message.TimeStamp = DateTime.Now;
                 db.Entry(message).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

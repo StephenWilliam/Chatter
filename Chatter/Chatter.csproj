@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201610281531021_add followers.Designer.cs">
       <DependentUpon>201610281531021_add followers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610281946019_disabled followers.cs" />
+    <Compile Include="Migrations\201610281946019_disabled followers.Designer.cs">
+      <DependentUpon>201610281946019_disabled followers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -309,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610281531021_add followers.resx">
       <DependentUpon>201610281531021_add followers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610281946019_disabled followers.resx">
+      <DependentUpon>201610281946019_disabled followers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
