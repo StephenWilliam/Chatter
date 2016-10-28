@@ -61,7 +61,7 @@ namespace Chatter.Controllers
 
             return View(message);
         }
-
+        //Identify currentuser
         private ApplicationUser CurrentUser
         {
             get
