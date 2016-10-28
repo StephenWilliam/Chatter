@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace Chatter.Models
 {
@@ -17,6 +18,9 @@ namespace Chatter.Models
             return userIdentity;
         }
         public string ChatName { get; set; }
+        //public string Id { get; set; }
+        public ICollection<ApplicationUser> Followers { get; set; }
+        public ICollection<ApplicationUser> Following { get; set; }
 
     }
 
@@ -34,5 +38,21 @@ namespace Chatter.Models
         }
 
         public System.Data.Entity.DbSet<Chatter.Models.Message> Messages { get; set; }
+
+        public class MyEntities : DbContext
+        {
+            public DbSet<ApplicationUser> Users { get; set; }
+
+            protected override void OnModelCreating(DbModelBuilder modelBuilder)
+            {
+                modelBuilder.Entity<ApplicationUser>()
+                    .HasMany(x => x.Followers).WithMany(x => x.Following)
+                    .Map(x => x.ToTable("Followers")
+                        .MapLeftKey("UserId")
+                        .MapRightKey("FollowerId"));
+            }
+        }
+
+        public System.Data.Entity.DbSet<Chatter.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
