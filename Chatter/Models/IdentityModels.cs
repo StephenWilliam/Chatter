@@ -17,6 +17,9 @@ namespace Chatter.Models
             return userIdentity;
         }
         public string ChatName { get; set; }
+        //public virtual ICollection<message> Messaages { get; set; }
+        //public ICollection<Follow> Follows { get; set; }
+
 
     }
 
@@ -34,5 +37,23 @@ namespace Chatter.Models
         }
 
         public System.Data.Entity.DbSet<Chatter.Models.Message> Messages { get; set; }
+
+        //****May need for follower tracking
+        //public class MyEntities : DbContext
+        //{
+        //    public DbSet<ApplicationUser> Users { get; set; }
+
+        //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //    {
+        //        modelBuilder.Entity<ApplicationUser>()
+        //            .HasMany(x => x.Followers).WithMany(x => x.Following)
+        //            .Map(x => x.ToTable("Followers")
+        //                .MapLeftKey("UserId")
+        //                .MapRightKey("FollowerId"));
+        //    }
+        //}
+
+        ////public System.Data.Entity.DbSet<Chatter.Models.ApplicationUser> ApplicationUsers { get; set; }
+
     }
 }
