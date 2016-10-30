@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201610281946019_disabled followers.Designer.cs">
       <DependentUpon>201610281946019_disabled followers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610292200533_testingUserNameEmail.cs" />
+    <Compile Include="Migrations\201610292200533_testingUserNameEmail.Designer.cs">
+      <DependentUpon>201610292200533_testingUserNameEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -295,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\201610292153091_checking userName\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -316,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610281946019_disabled followers.resx">
       <DependentUpon>201610281946019_disabled followers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610292200533_testingUserNameEmail.resx">
+      <DependentUpon>201610292200533_testingUserNameEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

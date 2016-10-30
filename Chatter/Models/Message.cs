@@ -14,8 +14,6 @@ namespace Chatter.Models
         public DateTime TimeStamp { get; set; }
         public string MessageContent { get; set; }
 
-        //[ForeignKey("UserId")]
-        //public string ApplicationUser { get; set; }
         public virtual ApplicationUser User { get; set; }
 
     }

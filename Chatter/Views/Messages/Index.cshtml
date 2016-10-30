@@ -11,8 +11,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 @*  Get currentUser and Display ChatName *@
-User.Identity.GetUserName()
-@Html.ActionLink("Hello " + User.Identity.GetUserName() + " !", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+@HttpContext.Current.User.Identity.Name
 
 
 <table class="table">
@@ -32,7 +31,7 @@ User.Identity.GetUserName()
 @foreach (var item in Model)
 {
 @*only display lines for currentUser *@
-    //while (item.User.ChatName == User.Identity.GetUserName())
+    //if (item.User.ChatName == HttpContext.Current.User.Identity.Name)
     {
     <tr>
         <td>

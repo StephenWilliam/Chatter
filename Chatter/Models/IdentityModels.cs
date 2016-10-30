@@ -18,9 +18,8 @@ namespace Chatter.Models
             return userIdentity;
         }
         public string ChatName { get; set; }
-        //public string Id { get; set; }
-        //public ICollection<ApplicationUser> Followers { get; set; }
-        //public ICollection<ApplicationUser> Following { get; set; }
+        //public virtual ICollection<message> Messaages { get; set; }
+        //public ICollection<Follow> Follows { get; set; }
 
     }
 
