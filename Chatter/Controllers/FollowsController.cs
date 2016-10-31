@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Chatter.Models;
 
-namespace Chatter.Controllers
+namespace Chatter.Content
 {
     public class FollowsController : Controller
     {
@@ -17,8 +17,7 @@ namespace Chatter.Controllers
         // GET: Follows
         public ActionResult Index()
         {
-            var follows = db.Follows.Include(f => f.ChatName);
-            return View(follows.ToList());
+            return View(db.Follows.ToList());
         }
 
         // GET: Follows/Details/5
@@ -39,7 +38,6 @@ namespace Chatter.Controllers
         // GET: Follows/Create
         public ActionResult Create()
         {
-            ViewBag.ChatNameID = new SelectList(db.ApplicationUsers, "Id", "ChatName");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace Chatter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FollowID,UserID,ChatNameID")] Follow follow)
+        public ActionResult Create([Bind(Include = "FollowID")] Follow follow)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace Chatter.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ChatNameID = new SelectList(db.ApplicationUsers, "Id", "ChatName", follow.ChatNameID);
             return View(follow);
         }
 
@@ -73,7 +70,6 @@ namespace Chatter.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ChatNameID = new SelectList(db.ApplicationUsers, "Id", "ChatName", follow.ChatNameID);
             return View(follow);
         }
 
@@ -82,7 +78,7 @@ namespace Chatter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FollowID,UserID,ChatNameID")] Follow follow)
+        public ActionResult Edit([Bind(Include = "FollowID")] Follow follow)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace Chatter.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ChatNameID = new SelectList(db.ApplicationUsers, "Id", "ChatName", follow.ChatNameID);
             return View(follow);
         }
 

@@ -83,5 +83,3 @@ c:\users\wecancodeit\documents\visual studio 2015\Projects\Chatter\Chatter\obj\D
 c:\users\wecancodeit\documents\visual studio 2015\Projects\Chatter\Chatter\obj\Debug\Chatter.Migrations.ChatName.resources
 c:\users\wecancodeit\documents\visual studio 2015\Projects\Chatter\Chatter\obj\Debug\Chatter.csproj.GenerateResource.Cache
 c:\users\wecancodeit\documents\visual studio 2015\Projects\Chatter\Chatter\obj\Debug\Chatter.Migrations.UserID.resources
-C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Chatter\Chatter\obj\Debug\Chatter.Migrations.AddedFollowClass.resources
-C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\Chatter\Chatter\obj\Debug\Chatter.Migrations.AddedFieldsToFollow.resources
