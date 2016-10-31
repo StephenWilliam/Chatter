@@ -320,3 +320,8 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+Chatter/bin/Chatter.pdb
+Chatter/bin/Chatter.pdb
+Chatter/App_Data/aspnet-Chatter-20161027125205.mdf
+Chatter/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+.vs/Chatter/v14/.suo
