@@ -19,9 +19,9 @@ namespace Chatter.Controllers
         // GET: Messages
         public ActionResult Index()
         {
-            //var currentUser = UserManager.FindById(User.Identity.GetUserId());
+            //returns view of currentUser messages
             return View(db.Messages.ToList().Where(message => message.User.Id == CurrentUser.Id));
-            //return View(db.Messages.ToList());
+            //return View(db.Messages.ToList()); //original line
 
         }
 
