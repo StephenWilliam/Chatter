@@ -195,8 +195,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\FollowsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FollowsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
@@ -210,6 +210,14 @@
     <Compile Include="Migrations\201610271841573_UserID.cs" />
     <Compile Include="Migrations\201610271841573_UserID.Designer.cs">
       <DependentUpon>201610271841573_UserID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610311540411_AddedFollows.cs" />
+    <Compile Include="Migrations\201610311540411_AddedFollows.Designer.cs">
+      <DependentUpon>201610311540411_AddedFollows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610311608450_ModifiedFollow.cs" />
+    <Compile Include="Migrations\201610311608450_ModifiedFollow.Designer.cs">
+      <DependentUpon>201610311608450_ModifiedFollow.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610271841573_UserID.resx">
       <DependentUpon>201610271841573_UserID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610311540411_AddedFollows.resx">
+      <DependentUpon>201610311540411_AddedFollows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610311608450_ModifiedFollow.resx">
+      <DependentUpon>201610311608450_ModifiedFollow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

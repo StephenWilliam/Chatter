@@ -11,6 +11,14 @@
     <h4>Follow</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChatName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChatName)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {

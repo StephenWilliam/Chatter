@@ -7,8 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Chatter.Models;
+using Microsoft.AspNet.Identity;
 
-namespace Chatter.Content
+namespace Chatter.Controllers
 {
     public class FollowsController : Controller
     {
@@ -46,10 +47,12 @@ namespace Chatter.Content
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FollowID")] Follow follow)
+        public ActionResult Create([Bind(Include = "FollowID,ChatName")] Follow follow)
         {
             if (ModelState.IsValid)
             {
+                follow.User = CurrentUser;
+
                 db.Follows.Add(follow);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -57,6 +60,18 @@ namespace Chatter.Content
 
             return View(follow);
         }
+
+        //Identify currentuser
+        private ApplicationUser CurrentUser
+        {
+            get
+            {
+                UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                ApplicationUser currentUser = UserManager.FindById(User.Identity.GetUserId());
+                return currentUser;
+            }
+        }
+
 
         // GET: Follows/Edit/5
         public ActionResult Edit(int? id)
@@ -78,7 +93,7 @@ namespace Chatter.Content
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FollowID")] Follow follow)
+        public ActionResult Edit([Bind(Include = "FollowID,ChatName")] Follow follow)
         {
             if (ModelState.IsValid)
             {

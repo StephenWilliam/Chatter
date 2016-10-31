@@ -10,10 +10,8 @@ namespace Chatter.Models
     {
         [Key]
         public int FollowID { get; set; }
-        //foreign key
+        public string ChatName { get; set; }
+
         public virtual ApplicationUser User { get; set; }
-        public virtual ApplicationUser ChatName { get; set; }
-
-
     }
 }
