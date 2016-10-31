@@ -17,7 +17,7 @@ namespace Chatter.Models
             return userIdentity;
         }
         public string ChatName { get; set; }
-        //public virtual ICollection<message> Messaages { get; set; }
+        //public virtual ICollection<message> Messages { get; set; }
         //public ICollection<Follow> Follows { get; set; }
 
 
