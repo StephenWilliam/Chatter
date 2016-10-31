@@ -15,14 +15,14 @@ namespace Chatter.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Chatter was developed by William Green and Stephen Page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Got a question?  Shoot us a message!";
 
             return View();
         }

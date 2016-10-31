@@ -1,7 +1,16 @@
 ﻿body {
+    background-image: url('../Images/minions.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
     padding-top: 50px;
     padding-bottom: 20px;
+    color: red;
 }
+.jumbotron{
+    background: transparent;
+
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
