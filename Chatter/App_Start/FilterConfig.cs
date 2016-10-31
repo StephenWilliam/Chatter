@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 using RequireHttpsAttributeBase = System.Web.Mvc.RequireHttpsAttribute;
 
-namespace ToDo
+namespace Chatter
 {
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
