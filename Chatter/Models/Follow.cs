@@ -11,8 +11,8 @@ namespace Chatter.Models
         [Key]
         public int FollowID { get; set; }
         //foreign key
-        public int MessageID { get; set; }
         public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser ChatName { get; set; }
 
 
     }

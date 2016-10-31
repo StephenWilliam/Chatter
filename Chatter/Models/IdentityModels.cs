@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace Chatter.Models
 {
@@ -18,7 +19,7 @@ namespace Chatter.Models
         }
         public string ChatName { get; set; }
         //public virtual ICollection<message> Messages { get; set; }
-        //public ICollection<Follow> Follows { get; set; }
+        public ICollection<Follow> Follows { get; set; }
 
 
     }
@@ -37,6 +38,8 @@ namespace Chatter.Models
         }
 
         public System.Data.Entity.DbSet<Chatter.Models.Message> Messages { get; set; }
+
+        public System.Data.Entity.DbSet<Chatter.Models.Follow> Follows { get; set; }
 
         //****May need for follower tracking
         //public class MyEntities : DbContext
